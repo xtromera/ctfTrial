@@ -7,7 +7,7 @@
     const me = h2 ? (h2.textContent || '').replace(' Message','').trim() : '';
 
     // 2) Pull the admin dashboard HTML (same-origin)
-    const dash = await fetch('/admin/dashboard', { credentials: 'include' });
+    const dash = await fetch('/admin/dashboard?test=a', { credentials: 'include' });
     const html = await dash.text();
 
     // 3) Find the <form action="/admin/approve/<id>"> that sits near our username
